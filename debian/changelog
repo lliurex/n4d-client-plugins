@@ -1,3 +1,9 @@
+n4d-client-plugins (0.90) bionic; urgency=medium
+
+  * First bionic release
+
+ -- Hector Garcia Huerta <hectorgh@gmail.com>  Fri, 25 Jan 2019 12:34:20 +0100
+
 n4d-client-plugins (0.88) xenial; urgency=medium
 
   * Fixing n4d reload
