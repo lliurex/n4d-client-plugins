@@ -1,0 +1,94 @@
+n4d-client-plugins (0.88) xenial; urgency=medium
+
+  * Fixing n4d reload
+
+ -- Hector Garcia Huerta <hectorgh@gmail.com>  Wed, 26 Apr 2017 13:13:09 +0200
+
+n4d-client-plugins (0.87) xenial; urgency=high
+
+  * Removing old plugins 
+
+ -- Hector Garcia Huerta <hectorgh@gmail.com>  Wed, 19 Apr 2017 10:28:03 +0200
+
+n4d-client-plugins (0.86.1) xenial; urgency=medium
+
+  * Register new method register_share_info
+
+ -- Juanma Navarro Mañez <juanma1980@gmail.com>  Thu, 16 Mar 2017 13:54:59 +0100
+
+n4d-client-plugins (0.86) xenial; urgency=medium
+
+  * Refactorized TeacherShare: Adopted ScpManager as the only file transfer mechanism
+
+ -- Juanma Navarro Mañez <juanma1980@gmail.com>  Wed, 15 Mar 2017 11:54:12 +0100
+
+n4d-client-plugins (0.85) xenial; urgency=high
+
+  * First xenial release
+
+ -- Hector Garcia Huerta <hectorgh@gmail.com>  Thu, 18 Feb 2016 16:41:15 +0100
+
+n4d-client-plugins (0.84) trusty; urgency=medium
+
+  * Fixed missing dependency
+
+ -- Hector Garcia Huerta <hectorgh@gmail.com>  Thu, 04 Dec 2014 12:37:01 +0100
+
+n4d-client-plugins (0.83) trusty; urgency=medium
+
+  * First trusty release
+
+ -- Hector Garcia Huerta <hectorgh@gmail.com>  Mon, 27 Oct 2014 11:46:20 +0100
+
+n4d-client-plugins (0.82) precise; urgency=high
+
+  Homework harvester (hopefully) supports every possible combination:
+    server -> client
+    semi-client -> semi-client
+    client -> client
+    ...
+
+ -- Hector Garcia Huerta <hectorgh@gmail.com>  Mon, 08 Sep 2014 18:11:39 +0200
+
+n4d-client-plugins (0.81.7) precise; urgency=high
+
+  * Trying to support homework harvester on semi clients
+
+ -- Hector Garcia Huerta <hectorgh@gmail.com>  Fri, 28 Feb 2014 11:56:18 +0100
+
+n4d-client-plugins (0.81.6) precise; urgency=high
+
+  * Fixing sending files from client to client via homework harvester
+
+ -- Hector Garcia Huerta <hectorgh@gmail.com>  Mon, 14 Oct 2013 10:07:05 +0200
+
+n4d-client-plugins (0.81.5) precise; urgency=high
+
+  * DUMMY UPGRADE
+
+ -- Hector Garcia Huerta <hectorgh@gmail.com>  Mon, 14 Oct 2013 10:05:29 +0200
+
+n4d-client-plugins (0.81.4) precise; urgency=low
+
+  * UNRELEASED
+
+ -- Hector Garcia Huerta <hectorgh@gmail.com>  Tue, 08 Oct 2013 11:24:29 +0200
+
+n4d-client-plugins (0.81.3) precise; urgency=low
+
+  * Fixing utf8 file names when sending files with lliurex-homework-harverster
+
+ -- Hector Garcia Huerta <hectorgh@gmail.com>  Thu, 25 Jul 2013 13:38:45 +0200
+
+n4d-client-plugins (0.81.2.1) precise; urgency=high
+
+  * UNRELEASED
+
+ -- Hector Garcia Huerta <hectorgh@gmail.com>  Thu, 25 Jul 2013 13:22:46 +0200
+
+n4d-client-plugins (0.81.2) precise; urgency=low
+
+  * First stand alone package
+
+ -- Hector Garcia Huerta <hectorgh@gmail.com>  Tue, 23 Jul 2013 11:15:17 +0200
+
