@@ -1,0 +1,7 @@
+[SETUP]
+type=python
+path=NetShareOperations.py
+class=NetShareOperations
+[METHODS]
+delete_dir_content=admin,admins
+send_file_to_group=admin,admins,teachers

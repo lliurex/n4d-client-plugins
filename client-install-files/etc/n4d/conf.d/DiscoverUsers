@@ -1,0 +1,6 @@
+[SETUP]
+type=python
+path=DiscoverUsers.py
+class=DiscoverUsers
+[METHODS]
+discover=admin,admins,teachers
