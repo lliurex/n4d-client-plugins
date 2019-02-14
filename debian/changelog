@@ -1,3 +1,9 @@
+n4d-client-plugins (0.91) bionic; urgency=medium
+
+  * Adding sudo group
+
+ -- Juan Ramon Pelegrina <juapesai@hotmail.com>  Thu, 14 Feb 2019 10:33:24 +0100
+
 n4d-client-plugins (0.90) bionic; urgency=medium
 
   * First bionic release
