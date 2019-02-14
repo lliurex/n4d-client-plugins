@@ -6,4 +6,4 @@ class=TeacherShare
 send_to_teacher_socket=anonymous
 send_to_teacher_net=anonymous
 grab_file=anonymous
-register_share_info=admins,adm,teachers
+register_share_info=admins,sudo,teachers
