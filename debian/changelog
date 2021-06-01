@@ -1,3 +1,10 @@
+n4d-client-plugins (0.100) focal; urgency=medium
+
+  * First focal release
+  * Ported to n4d > 0.900
+
+ -- Hector Garcia Huerta <hectorgh@gmail.com>  Tue, 01 Jun 2021 16:08:00 +0200
+
 n4d-client-plugins (0.91) bionic; urgency=medium
 
   * Adding sudo group
