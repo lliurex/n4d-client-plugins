@@ -1,0 +1,13 @@
+Source: n4d-client-plugins
+Section: misc
+Priority: standard
+Maintainer: Equipo LliureX <lliurex@gva.es>
+Build-Depends: debhelper (>= 7)
+Standards-Version: 3.9.7
+
+Package: n4d-client-plugins
+Architecture: all
+Pre-Depends: n4d (>= 0.81.2)
+Depends: ${shlibs:Depends}, ${misc:Depends}, python, python-utmp, python-ldap
+Description:  n4d client plugins
+ This package contains n4d plugins for lliurex clients
