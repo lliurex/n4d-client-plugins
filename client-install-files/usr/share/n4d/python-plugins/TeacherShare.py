@@ -8,8 +8,10 @@ import multiprocessing
 import socket 
 import ssl
 import shutil
+import xmlrpc.client
 
-from xmlrpclib import *
+
+import n4d.responses
 
 class TeacherShare:
 
@@ -24,13 +26,19 @@ class TeacherShare:
 		server = ServerProxy ("https://server:9779")
 		
 		try:
-			paths=server.get_paths("","TeacherShareManager")
+			ret=server.get_paths("","TeacherShareManager")
+			if ret["status"]==0:
+				paths=ret["return"]
+			else:
+				print(ret["msg"])
+				return n4d.responses.build_failed_call_response(ret["msg"])
 			
 		except Exception as e:
-			print e
-			return False
+			print(e)
+			return n4d.responses.build_failed_call_response(str(e))
 					
 		if to_user in paths:
+			
 			path,name,ip,port=paths[to_user]
 			path=path.encode("utf8")
 			name=name.encode("utf8")
@@ -42,27 +50,31 @@ class TeacherShare:
 				p.join()
 	
 				if not queue.get():
-					return False
+					return n4d.responses.build_failed_call_response()
 				else:
-					return True
+					return n4d.responses.build_successful_call_response()
 				
 			except Exception as e:
-				print e
-				return False
+				print(e)
+				return n4d.responses.build_failed_call_response(str(e))
+				
 	#def send_to_teacher_net
 	
 	def copy_file_as_user(self,src,from_ip,to_ip,from_user,to_user,delete,queue):
+		
 		try:	
-			server=ServerProxy("https://"+to_ip+":9779")
+			#server=ServerProxy("https://"+to_ip+":9779")
+			context=ssl._create_unverified_context()
+			server=xmlrpc.client.ServerProxy("https://"+to_ip+":9779",context=context)
 			ret=server.grab_file("","TeacherShare",from_user,from_ip,src)
-			if ret:
+			if ret["status"]==0 and ret["return"]:
 				if delete:
 					os.remove(src)
 				queue.put(True)
 			else:
 				queue.put(False)
 		except Exception as e:
-			print e
+			print(e)
 			queue.put(False)
 	#def copy_file_as_user
 
@@ -71,16 +83,23 @@ class TeacherShare:
 		if self.credentials:
 			teacher_uid=pwd.getpwnam(self.credentials[0])[2]
 			teacher_gid=pwd.getpwnam(self.credentials[0])[3]
-			server=ServerProxy("https://localhost:9779")
+			#server=ServerProxy("https://localhost:9779")
+			context=ssl._create_unverified_context()
+			server=xmlrpc.client.ServerProxy("https://localhost:9779",context=context)
 			if self.credentials:
 				try:
 					fileName=os.path.basename(src)
 					dest=self.shared_path+"/["+from_user+"]_"+fileName
 					ret=server.get_file(self.credentials,"ScpManager",from_user,self.credentials[0],self.credentials[1],from_ip,src,dest)
-					os.chown(dest,teacher_uid,teacher_gid)
-					return True
+					if ret["status"]==0:
+						os.chown(dest,teacher_uid,teacher_gid)
+						return True
+					else:
+						print(ret["msg"])
+						e=Exception(ret["msg"])
+						raise e
 				except Exception as e:
-					print e
+					print(e)
 					return False
 		else:
 			print("No credentials found")

@@ -1,6 +1,0 @@
-[SETUP]
-type=python
-path=SignOfLife.py
-class=SignOfLife
-[METHODS]
-send_sign=anonymous
