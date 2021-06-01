@@ -1,0 +1,26 @@
+{
+    "SETUP": {
+        "type": "python",
+        "path": "TeacherShare.py",
+        "class": "TeacherShare"
+    },
+    "METHODS": {
+        "send_to_teacher_net": {
+            "allowed_groups": [
+                "anonymous"
+            ]
+        },
+        "grab_file": {
+            "allowed_groups": [
+                "anonymous"
+            ]
+        },
+        "register_share_info": {
+            "allowed_groups": [
+                "sudo",
+                "admins",
+		"teachers"
+            ]
+        }
+    }
+}
