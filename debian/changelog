@@ -1,3 +1,10 @@
+n4d-client-plugins (0.101) focal; urgency=medium
+
+  * Fixed python3 stuff
+  * Using proper n4d responses
+
+ -- Hector Garcia Huerta <hectorgh@gmail.com>  Mon, 06 Sep 2021 12:03:21 +0200
+
 n4d-client-plugins (0.100) focal; urgency=medium
 
   * First focal release
